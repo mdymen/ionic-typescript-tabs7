@@ -1,0 +1,39 @@
+<ion-header-bar align-title="center" class="windo_head">
+      <div class="main_icon">
+      <img src="img/icon.png"  class="animated infinite pulse" ng-click="goto('/login')"/>
+    </div>
+   <div class="buttons right_btn">
+    <button class="button button-icon button-clear" ng-click="openadd_image()">
+     <img src="img/ic1.png"/>
+    </button>
+    <button class="button button-icon button-clear"  ng-click="opensearch_modal()">
+     <img src="img/ic2.png"/>
+    </button>
+    <a href="#/setting" class="button button-icon button-clear">
+     <img src="img/ic3.png"/>
+    </a>
+    <button class="button button-icon button-clear"  ng-click="openprofile()">
+     <img src="img/ic4.png"/>
+    </button>
+     <button class="button button-icon button-clear"  ng-click="myGoBack()">
+     <img src="img/ic6.png"/>
+    </button>
+  </div>
+</ion-header-bar>  
+  <ion-content class="setting">
+     <ion-toggle ng-repeat="item in setting" ng-class="{color_notif:$index==3}">{{item.title}}</ion-toggle> 
+     <div class="your_email">
+         <p class="head">News letter</p>
+         <p>Subscribe to our list to receive all new</p>
+        <div class="list contact_us">
+            <label class="item item-input">
+            <input type="email" placeholder="Your e-mail here">
+            </label>
+        </div>
+        <a  href="#" class="button button-block main_btn">
+        Subscribe
+        </a>
+      
+      
+     </div>
+  </ion-content>

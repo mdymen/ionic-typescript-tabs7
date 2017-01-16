@@ -1,0 +1,98 @@
+<ion-view view-title="Palpites" cache-view="false" ng-controller="Palpites">
+  
+    <div class="bar bar-subheader sub_head">
+        <div class="row">
+          <div class="col"  ng-click="activitytab=1" ng-class="{'color_border':activitytab==1}">
+            <p>Palpites</p>
+          </div>
+          <div class="col"  ng-click="activitytab=2" ng-class="{'color_border':activitytab==2}">
+            <p>Meus Palpites</p>
+          </div>
+          <div class="col" ng-click="goto('/app/profile')">
+            <p>Campeonatos</p>
+          </div>
+          <!--<div class="col col-10"  ng-click="goto('/app/add_post')">
+             <i class="ion-plus"></i>
+          </div>-->
+        </div>
+    </div>
+  <ion-content class="has-subheader activity_page">
+        <div ng-switch on="activitytab">
+            <div  ng-switch-when="1"ng-repeat="palpite in palpites" >
+                <a class="activity_list">
+                    <div class="row main_row">
+                        <div class="col col-33">
+                            <div class="activ_image" style="background:url({{item.img}})no-repeat;
+                            background-size:100% 100%;"></div>
+                        </div>
+                        <div class="col col-67">
+                            <h3>{{palpite.ch_nome}}</h3>
+                            <P>{{palpite.mt_date}}</P>
+                            <!--<p class="parag">
+                                {{palpite.t1nome}} vs {{palpite.t2nome}}
+                            </p>-->
+                            <h3>{{palpite.t1nome}} vs {{palpite.t2nome}}</h3>
+                        </div>
+                    </div>
+                </a>
+               <!--<a href="#/app/detail" class="activity_list"
+                    collection-repeat="item in activity"
+                    collection-item-width="'100%'"
+                    collection-item-height="170"
+                    >      
+                    <div class="row main_row">
+                        <div class="col col-33">
+                            <div class="activ_image" style="background:url({{item.img}})no-repeat;
+                            background-size:100% 100%;"></div>
+                        </div>
+                        <div class="col col-67">
+                            <h3>{{item.title}}</h3>
+                            <P>acteur de génie</P>
+                            <p class="parag">
+                                is a creative studio based in Kuwait, specializing in advertising,
+                                marketing, design, and content creation.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row sec_row">
+                      <div class="col col-33">
+                         <img src="img/l4.png"/>
+                         <span>Firas Said</span>
+                      </div>
+                      <div class="col col-25">
+                         <p><i class="ion-eye"></i>1235</p>
+                      </div>
+                       <div class="col col-20">
+                         <p><i class="ion-thumbsup"></i>2455</p>
+                      </div>
+                       <div class="col col-20">
+                         <p><i class="ion-chatbubble"></i>865</p>
+                      </div>
+                    </div>
+                    </a>-->
+            </div>
+            <div  class="people_follow"  ng-switch-when="2" >
+                  <div class="list_people"
+                    collection-repeat="item in discover"
+                    collection-item-width="'100%'"
+                    collection-item-height="80"
+                    >      
+                    <div class="row">
+                        <div class="col col-20">
+                            <div class="f_item" style="background:url({{item.img}})no-repeat;
+                            background-size:100% 100%;"></div>
+                        </div>
+                        <div class="col col-67">
+                            <h3>Leonardo DeCaprio</h3>
+                            <P>acteur de génie</P>
+                            <span ng-if="item.type==1">following</span>
+                        </div>
+                        <div class="col follow_icon" ng-class="{'color_icon':item.type!=1}" ng-click="changestatus(item)">
+                           <i class="ion-checkmark-circled"></i>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        </div>    
+  </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view view-title="Activity">      
+  <ion-content>
+    <div class="select_file">
+        <div class="upload_div">
+         <div class="upload_succ" ng-class="{'animated slideInDown':upload_files==1}" ng-if="upload_files==1">
+            <p><i class="ion-paperclip"></i>File uploaded successfully<span><i class="ion-checkmark"></i></span></p>
+            <p><i class="ion-paperclip"></i>File uploaded successfully<span><i class="ion-checkmark"></i></span></p>
+            <p class="failed"><i class="ion-paperclip"></i>File uploaded successfully<span><i class="ion-close"></i></span></p>
+          </div>
+         <div>
+          <h3  ng-if="upload_files!=1">Select files for your project</h3>
+          <p ng-if="upload_files!=1">(Upload multiple images, videos and audio)</p>
+          <p class="upload_btn" ng-click="upload_files=1"><i class="ion-upload"></i>Upload files</p>
+         </div> 
+        </div>
+    </div>
+     <form class="reg_form select">
+        <div class="list">
+            <label class="item item-input">
+                 <input type="text" placeholder="Project name">
+            </label>
+             <label class="item item-input item-select">
+                <select>
+                    <option>Project type</option>
+                </select>
+            </label>
+           
+            <a href="#/app/list" class="button button-block main_btn save_btn">
+            Save
+            </a>
+             
+            <a ng-click="openupload_img()" class="button button-block main_btn">
+            Continue
+            </a>
+        </div>
+     </form>       
+  </ion-content>
+ </ion-view>
+ 

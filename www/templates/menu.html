@@ -1,0 +1,64 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable" align-title="left">
+      <ion-nav-back-button class="button button-icon button-clear bak_arr"> 
+          <i class="ion-chevron-left"></i>
+        </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left" style="display:block">
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+      <button class="button button-icon">
+        <i class="ion-flag"></i>
+        <span class="badge">3</span>
+      </button>
+       <button ng-click="goto('/app/contact')" class="button button-icon">
+        <i class="ion-email"></i>
+      </button>
+       <button class="button button-icon" ng-click="opensearch_modal()">
+        <i class="ion-ios-search-strong"></i>
+      </button>
+   </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" width="240">
+    <ion-header-bar class="bar-stable menu_head">
+        <img src="img/prof2.png"/>
+        <p>posta.com/brad pitt</p>
+        <span class="cir"  ng-click="logout();"  menu-close>
+          <i class="ion-power"></i>
+        </span>
+    </ion-header-bar>
+    <ion-content class="menu_app">
+      <ion-list>
+        <ion-item menu-close href="#" ng-click="gotolistPage(1)">
+          Home
+        </ion-item>
+        <ion-item menu-close href="#" ng-click="gotolistPage(1)">
+          Palpites
+        </ion-item>
+        <ion-item menu-close href="#" ng-click="gotolistPage(2)">
+          Meus Palpites
+        </ion-item>
+        <ion-item menu-close href="#/app/profile">
+          Campeonatos
+        </ion-item>
+          <ion-item menu-close href="#/app/setting">
+              Ranking
+          </ion-item>
+        <ion-item menu-close href="#/app/setting">
+         Caixa
+        </ion-item>
+        <ion-item menu-close href="#/app/message">
+         Transacoes
+         <span class="badge">3</span>
+        </ion-item>
+       
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

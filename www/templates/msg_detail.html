@@ -1,0 +1,31 @@
+<ion-view view-title="Messages" >
+  
+    <div class="bar bar-subheader sub_head compose_msg">
+        <h3>Message with <span>Leonardo</span></h3>
+    </div>
+    
+  <ion-content class="message msg_det has-subheader">
+       <div class="people_follow">
+                  <div class="list_people" ng-repeat="item in message">      
+                    <div class="row">
+                        <div class="col col-20">
+                            <div class="f_item" style="background:url({{item.img}})no-repeat;
+                            background-size:100% 100%;"></div>
+                        </div>
+                        <div class="col col-80">
+                            <h3>{{item.title}}<span class="msg_date">Apr 13,2016</span></h3>
+                            <P>Hi Mahmoud, The -ING Creative Festival .....</P>
+                        </div>
+                    </div>
+                </div>
+         </div> 
+        <div class="write_msg">  
+            <label class="item item-input">
+               <textarea rows="4" placeholder="Reply to Leonardo"></textarea>
+            </label>
+            <button class="button replay_btn">
+              Replay
+            </button>
+        </div>     
+  </ion-content>
+</ion-view  >

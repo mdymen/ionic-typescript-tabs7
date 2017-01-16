@@ -1,0 +1,92 @@
+<ion-view view-title="Profile" align-title="left" cache-view="false">
+  <ion-content class="profile_page"  ng-class="{'footer_prof':activeselect_tab==2}">
+    <div class="profile_cover">
+    <div class="row">
+      <div class="col col-25">
+         <img src="img/prof2.png" class="prof_img"/>
+      </div>
+      <div class="col name_profile">
+         <p><span>posta.com/</span>brad pitt</p>
+      </div>
+      <div class="col col-20">
+          <span class="cir"><img src="img/load.png"/></span>
+      </div>   
+    </div> 
+    <div class="row two_tab">
+      <div class="col" ng-click="select_tab(1)" ng-class="{'color_border':activeselect_tab==1}">
+         <p>Profile settings</p>
+      </div>
+        <div class="col" ng-click="select_tab(2)" ng-class="{'color_border':activeselect_tab==2}">
+         <p>Follow people</p>
+      </div>
+    </div> 
+    </div>
+   <div ng-switch on="activeselect_tab">
+    <div class="profile_input padding" ng-switch-when="1" >
+        <div class="list">
+            <label class="item item-input">
+               <input type="text" placeholder="username" value="brad pitt">
+            </label>
+             <label class="item item-input">
+               <input type="email" placeholder="email" value="brad_pitt@posta.com">
+            </label>
+            <div class="row select">
+              <div class="col">
+                  <label class="item item-input item-select">
+                    <select>
+                      <option>occupation</option>
+                    </select>
+                  </label>
+              </div>
+               <div class="col">
+                  <label class="item item-input item-select">
+                    <select>
+                      <option>skills</option>
+                    </select>
+                  </label>
+              </div>
+            </div>
+            <label class="item item-input txt_area">
+                 <textarea placeholder="about yourself" rows="4"></textarea>
+            </label>
+            
+             <button class="button button-block main_btn" ng-click="select_tab(2)">
+              Next
+            </button>
+        </div>
+       </div>
+       
+       
+       <div class="people_follow" ng-switch-when="2" >
+                <div class="list_people"
+                collection-repeat="item in items"
+                collection-item-width="'100%'"
+                collection-item-height="80"
+                >      
+                <div class="row">
+                    <div class="col col-20">
+                        <div class="f_item" style="background:url({{item.img}})no-repeat;
+                        background-size:100% 100%;"></div>
+                    </div>
+                    <div class="col col-67">
+                        <h3>Leonardo DeCaprio</h3>
+                        <P>acteur de génie</P>
+                        <span ng-if="item.type==1">following</span>
+                    </div>
+                    <div class="col follow_icon" ng-class="{'color_icon':item.type!=1}" ng-click="changestatus(item)">
+                       <i class="ion-checkmark-circled"></i>
+                    </div>
+                </div>
+                </div>
+            <div>    
+            </div>
+       </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar ng-show="activeselect_tab==2" class="profile_footer">
+  <!--href="#/app/list"-->
+    <a ng-click="gotolistPage(1)" class="button button-block main_btn">
+      Confirm
+    </a>
+  </ion-footer-bar>
+</ion-view>

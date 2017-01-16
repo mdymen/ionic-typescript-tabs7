@@ -1,0 +1,37 @@
+  <ion-content class="login_page">
+      <div class="logo">
+          <img src="http://www.bolaocraquedebola.com.br/assets/img/iconelogo.png"/>
+          <p>Bolao Craque de Bola</p>
+      </div>
+      <div ng-controller="LoginCtrl">
+          <form class="log_form" ng-submit="login()">
+              <p>para participar do bolao "cadastra-se"</p>
+              <div class="list list-inset">
+                  <label class="item item-input">
+                      <i class="icon ion-android-person  placeholder-icon"></i>
+                      <input ng-model="login.usuario" type="text" placeholder="Usuario">
+                  </label>
+                  <label class="item item-input">
+                      <i class="icon ion-unlocked placeholder-icon"></i>
+                      <input ng-model="login.senha" type="password" placeholder="Senha">
+                  </label>
+                  <button class="button for_btn" ng-click="forget_password()">
+                      Esqueceu a senha ?
+                  </button>
+
+                  <!--<a href="#/app/list" class="button button-block">
+                      Get Started
+                  </a>-->
+                  <input type="submit" class="button button-block" value="Login" />
+
+                  <a href="#/register" class="button button-block main_btn">
+                      Cadastra-se
+                  </a>
+                  <!--<a href="#/app/list" class="button button-icon skip_btn">
+                      Skip
+                  </a>-->
+              </div>
+          </form>
+      </div>
+  </ion-content>
+

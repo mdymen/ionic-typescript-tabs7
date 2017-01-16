@@ -1,0 +1,53 @@
+<ion-header-bar align-title="left" class="bar-stable reg_head">
+</ion-header-bar>
+  <ion-content class="register_page">
+      <div class="profile_cover">
+         <!--<img src="img/profile.png" class="prof_img"/>
+         <span class="cir"><i class="ion-camera"></i></span>
+         <p>Upload cover picture</p>-->
+      </div>
+      <div ng-controller="CadastroCtrl">
+          <form class="reg_form log_form" ng-submit="cadastro()">
+              <div class="list">
+                  <label class="item item-input">
+                      <input type="text" ng-model="user.usuario" placeholder="usuario">
+                  </label>
+                  <label class="item item-input">
+                      <input type="email" ng-model="user.email" placeholder="e-mail">
+                  </label>
+                  <label class="item item-input">
+                      <input type="password" ng-model="user.senha" placeholder="senha">
+                  </label>
+                  <label class="item item-input">
+                      <input type="date" ng-model="user.niver">
+                  </label>
+                  <!--<div class="row select">
+                   <div class="col">
+                        <label class="item item-input item-select">
+                        <select>
+                            <option>country</option>
+                            <option>USA</option>
+                        </select>
+                        </label>
+                   </div>
+                    <div class="col">
+                        <label class="item item-input item-select">
+                        <select>
+                            <option>city</option>
+                            <option>USA</option>
+                        </select>
+                        </label>
+                   </div>
+                </div>-->
+
+                  <input type="submit" name="submit" class="button button-block" id="submit" value="Aceitar" />
+
+                  <!--<a href="#/app/profile" class="button button-block">
+                  Get Started
+                </a>-->
+
+              </div>
+          </form>
+      </div>
+  </ion-content>
+
