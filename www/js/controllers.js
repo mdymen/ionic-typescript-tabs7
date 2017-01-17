@@ -63,7 +63,7 @@ angular.module('starter.controllers', [])
 
     $http.get('http://localhost/penca/public/mobile/celproximojogos/?')
     .success(function (data) {
-        //console.log(data);
+        console.log(data);
         $scope.palpites = data;
     });
 
@@ -97,7 +97,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('LoginCtrl', function ($scope, $http, $state) {
-
+    $state.go('app.list');
     $scope.login = function () {
         $http.post('http://localhost/penca/public/mobile/celloginhash/?', { us: $scope.login.usuario, pass: $scope.login.senha })
             .success(function (data) {
@@ -106,6 +106,11 @@ angular.module('starter.controllers', [])
                  $state.go('app.list');
          });
 
+    }
+
+
+    $scope.palpitar = function (p) {
+        console.log(p);
     }
 
 })

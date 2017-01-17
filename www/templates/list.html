@@ -18,23 +18,36 @@
     </div>
   <ion-content class="has-subheader activity_page">
         <div ng-switch on="activitytab">
-            <div  ng-switch-when="1"ng-repeat="palpite in palpites" >
+            <div  ng-switch-when="1"ng-repeat="palpite in palpites" ng-click="palpitar(palpite)" >
                 <a class="activity_list">
-                    <div class="row main_row">
-                        <div class="col col-33">
-                            <div class="activ_image" style="background:url({{item.img}})no-repeat;
-                            background-size:100% 100%;"></div>
+                    <div class="row main_row" style="height:30px !important">
+                        <div class="col col-100">{{palpite.mt_date}} - {{palpite.ch_nome}} - Rodada {{palpite.rd_round}} </div>
                         </div>
-                        <div class="col col-67">
-                            <h3>{{palpite.ch_nome}}</h3>
-                            <P>{{palpite.mt_date}}</P>
-                            <!--<p class="parag">
-                                {{palpite.t1nome}} vs {{palpite.t2nome}}
-                            </p>-->
-                            <h3>{{palpite.t1nome}} vs {{palpite.t2nome}}</h3>
+                        <div class="row main_row" style="height:30px !important">
+                            <div class="col col-20">
+                                <div class="activ_image" style="float:right;width:30%;height:20px;background:url(http://localhost/penca{{palpite.tm1_logo}})no-repeat;
+                                    background-size:100% 100%;">
+                                </div>
+                            </div>
+                            <div class="col col-60" style="text-align:center;"><h3>{{palpite.t1nome}} vs {{palpite.t2nome}}</h3></div>
+                            <div class="col col-20">
+                                <div class="activ_image" style="width:30%;height:20px;background:url(http://localhost/penca{{palpite.tm2_logo}})no-repeat;
+                                    background-size:100% 100%;">
+                                </div>
+                            </div>
+                            <!--<div class="col col-33">
+                <div class="activ_image" style="background:url(http://localhost/penca{{palpite.tm1_logo}})no-repeat;
+            background-size:100% 100%;"></div>
+            </div>
+            <div class="col col-67">
+                <h3>{{palpite.ch_nome}}</h3>
+                <P>{{palpite.mt_date}}</P>
+                <p class="parag">
+                    {{palpite.t1nome}} vs {{palpite.t2nome}}
+                </p>
+            </div>-->
                         </div>
-                    </div>
-                </a>
+</a>
                <!--<a href="#/app/detail" class="activity_list"
                     collection-repeat="item in activity"
                     collection-item-width="'100%'"
