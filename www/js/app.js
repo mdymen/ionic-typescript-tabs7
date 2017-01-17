@@ -169,7 +169,7 @@ $rootScope.active_icon=function(type){
       }
     })
 	  .state('app.detail', {
-      url: "/detail",
+	      url: "/detail/:t1nome/:t2nome/:ch_id/:ch_nome/:mt_acumulado/:mt_date/:mt_id/:mt_idround:/:mt_idteam1/:mt_idteam2/:mt_round/:tm1_logo/:tm2_logo",
       views: {
         'menuContent': {
           templateUrl: "templates/detail.html"

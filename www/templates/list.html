@@ -18,7 +18,7 @@
     </div>
   <ion-content class="has-subheader activity_page">
         <div ng-switch on="activitytab">
-            <div  ng-switch-when="1"ng-repeat="palpite in palpites" ng-click="palpitar(palpite)" >
+            <div  ng-switch-when="1"ng-repeat="palpite in palpites" href="#/app/detail/" ng-click="setPalpite(palpite)" >
                 <a class="activity_list">
                     <div class="row main_row" style="height:30px !important">
                         <div class="col col-100">{{palpite.mt_date}} - {{palpite.ch_nome}} - Rodada {{palpite.rd_round}} </div>
