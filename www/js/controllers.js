@@ -71,6 +71,7 @@ angular.module('starter.controllers', [])
         .success(function (data) {
             console.log("campeonatos");
             console.log(data);
+            $scope.campeonatos = data;
         });
 
     $scope.setPalpite = function (p) {
@@ -83,6 +84,16 @@ angular.module('starter.controllers', [])
         console.log(p);
 
     };
+
+    $scope.meuspalpitescampeonato = function (opcao) {
+        $http.post('http://localhost/penca/public/mobile/cellbolao', {champ : opcao, rodada: '', team:''})
+            .success(function (data) {
+                console.log(data);
+                $scope.rounds = data.rondas;
+                //$scope.teams = data.teams;
+                //console.log($scope.teams);
+            });
+    }
 })
 
 .controller('CadastroCtrl', function ($scope, $http) {

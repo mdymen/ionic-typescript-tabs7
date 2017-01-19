@@ -1,4 +1,4 @@
-<ion-view view-title="Details" ng-controller="JogoCtrl">
+<ion-view view-title="Palpitar" ng-controller="JogoCtrl">
 
     <div class="bar bar-subheader sub_head">
         <div class="row">
@@ -17,95 +17,64 @@
         </div>
     </div>
 
-    <ion-content class="detail_page padding has-subheader">        
-        <div ng-model="palpite.mt_id" style="display:none">
-            {{mt_id}}
-        </div>
-        <div ng-model="palpite.mt_idround" style="display:none">
-            {{mt_idround}}
-        </div>
-        <div ng-model="palpite.ch_id" style="display:none">
-            {{ch_id}}
-        </div>
-        <div class="row main_row" style="height:40px">
-            <div class="det_header">
-                <h3>{{ch_nome}}<span>{{mt_date}}</span></h3>
+    <ion-content class="detail_page padding has-subheader">  
+        <div class="det_cont">
+            <div ng-model="palpite.mt_id" style="display:none">
+                {{mt_id}}
             </div>
-        </div>
-        <div class="row main_row" style="height:70px">
-            <div class="col col-25">
-                <div class="activ_image" style="margin-right:20px;margin-top:5px;float:right;width:55%;
+            <div ng-model="palpite.mt_idround" style="display:none">
+                {{mt_idround}}
+            </div>
+            <div ng-model="palpite.ch_id" style="display:none">
+                {{ch_id}}
+            </div>
+            <div class="row main_row" style="height:40px">
+                <div class="det_header">
+                    <h3>{{ch_nome}}<span>{{mt_date}}</span></h3>
+                </div>
+            </div>
+            <div class="row main_row" style="height:70px">
+                <div class="col col-25">
+                    <div class="activ_image" style="margin-right:20px;margin-top:5px;float:right;width:55%;
                      height:40px;background:url(http://localhost/penca{{tm1_logo}})no-repeat;
                                     background-size:100% 100%;">
+                    </div>
                 </div>
-            </div>
-            <div class="col col-50">
-                <div class="" style="padding-top:10px; margin-right:30px">
+                <div class="col col-50">
+                    <div class="" style="padding-top:10px; margin-right:30px">
 
-                    {{t1nome}}
+                        {{t1nome}}
+                    </div>
+                </div>
+                <div class="col col-25">
+                    <label class="item item-input" style="margin-bottom:10px">
+                        <input type="text" placeholder="" ng-model="palpite.rs_res1">
+                    </label>
                 </div>
             </div>
-            <div class="col col-25">
-                <label class="item item-input" style="margin-bottom:10px">
-                    <input type="text" placeholder="" ng-model="palpite.rs_res1">
-                </label>
-            </div>
-        </div>
-        <div class="row main_row" style="height:70px">
-            <div class="col col-25">
-                <div class="activ_image" style="margin-right:20px;margin-top:5px;float:right;width:55%;
+            <div class="row main_row" style="height:70px">
+                <div class="col col-25">
+                    <div class="activ_image" style="margin-right:20px;margin-top:5px;float:right;width:55%;
                      height:40px;background:url(http://localhost/penca{{tm2_logo}})no-repeat;
                                     background-size:100% 100%;">
+                    </div>
+                </div>
+                <div class="col col-70">
+                    <div class="" style="padding-top:10px; margin-right:30px">
+                        {{t2nome}}
+                    </div>
+                </div>
+                <div class="col col-25">
+                    <label class="item item-input" style="margin-bottom:10px">
+                        <input type="text" placeholder="" ng-model="palpite.rs_res2">
+                    </label>
                 </div>
             </div>
-            <div class="col col-70">
-                <div class="" style="padding-top:10px; margin-right:30px">
-                    {{t2nome}}
-                </div>
-            </div>
-            <div class="col col-25">
-                <label class="item item-input" style="margin-bottom:10px">
-                    <input type="text" placeholder="" ng-model="palpite.rs_res2">
-                </label>
-            </div>
-        </div>
 
-        <input type="submit" href="#" class="button button-block main_btn" value="Palpitar" ng-click="realizar_palpite(palpite, mt_id, mt_idround, ch_id)" />
+            <input type="submit" href="#" class="button button-block main_btn" value="Palpitar" ng-click="realizar_palpite(palpite, mt_id, mt_idround, ch_id)" />
 
-        <div class="det_cont">
-            <div class="det_img">
-                <img src="img/det.png" />
-            </div>
-            <div class="det_header">
-                <h3>FEATURED<span>Associated press</span></h3>
-                <p>14 powerful photos that will change how you think about the world today </p>
-                <span class="by">By Sophie Eastaugh, for life news</span>
-                <span class="last_update">Updated 1459 GMT (2159 HKT) October 19, 2015 </span>
-            </div>
-            <div class="det_content">
-                <p>
-                    The world's leaders meet Friday at the United Nations Global Assembly
-                    in New York to sign the Sustainable Development Goals,
-                    an ambitious set of 15-year targets for tackling global poverty, inequality and injustice.
-                </p>
+        </div>      
 
-                <p>
-                    World-famous photographers from countries including Nigeria,
-                    South Africa and Brazil have captured startling images of inequality -- to support
-                </p>
-
-                <p class="note">
-                    Go through the gallery to see the images and read what the photographers told Action 2015
-                    about what equality means to them and the power of imagery to inspire action.
-                </p>
-
-                <p>
-                    Listen to esteemed Nigerian photographer George
-                    Osodi explain his photo essay "Trading Places," representing the inequality of his beloved Lagos.
-                </p>
-
-            </div>
-        </div>
     </ion-content>
 </ion-view>
 
