@@ -21,103 +21,83 @@
     </div>
   <ion-content class="has-subheader activity_page">
         <div ng-switch on="activitytab">
-            <div  ng-switch-when="1"ng-repeat="palpite in palpites" href="#/app/detail/" ng-click="setPalpite(palpite)" >
+            <div style="height:65px" ng-switch-when="1" ng-repeat="palpite in palpites" href="#/app/detail/" ng-click="setPalpite(palpite)">
                 <a class="activity_list">
                     <div class="row main_row" style="height:30px !important">
-                        <div class="col col-100">{{palpite.mt_date}} - {{palpite.ch_nome}} - Rodada {{palpite.rd_round}} </div>
-                        </div>
-                        <div class="row main_row" style="height:30px !important">
-                            <div class="col col-20">
-                                <div class="activ_image" style="float:right;width:30%;height:20px;background:url(http://localhost/penca{{palpite.tm1_logo}})no-repeat;
+                        <div class="col col-100"><ion-datetime displayFormat="MMM DD, YYYY HH:mm" ng-model="palpite.mt_date"> {{palpite.mt_date}} </ion-datetime> - {{palpite.ch_nome}} - Rodada {{palpite.rd_round}} </div>
+                    </div>
+                    <div class="row main_row" style="height:30px !important">
+                        <div class="col col-20">
+                            <div class="activ_image" style="float:right;width:30%;height:20px;background:url(http://localhost/penca{{palpite.tm1_logo}})no-repeat;
                                     background-size:100% 100%;">
-                                </div>
                             </div>
-                            <div class="col col-60" style="text-align:center;"><h3>{{palpite.t1nome}} vs {{palpite.t2nome}}</h3></div>
-                            <div class="col col-20">
-                                <div class="activ_image" style="width:30%;height:20px;background:url(http://localhost/penca{{palpite.tm2_logo}})no-repeat;
+                        </div>
+                        <div class="col col-60" style="text-align:center;"><h3>{{palpite.t1nome}} vs {{palpite.t2nome}}</h3></div>
+                        <div class="col col-20">
+                            <div class="activ_image" style="width:30%;height:20px;background:url(http://localhost/penca{{palpite.tm2_logo}})no-repeat;
                                     background-size:100% 100%;">
-                                </div>
                             </div>
-                            <!--<div class="col col-33">
-                <div class="activ_image" style="background:url(http://localhost/penca{{palpite.tm1_logo}})no-repeat;
-            background-size:100% 100%;"></div>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="col col-67">
-                <h3>{{palpite.ch_nome}}</h3>
-                <P>{{palpite.mt_date}}</P>
-                <p class="parag">
-                    {{palpite.t1nome}} vs {{palpite.t2nome}}
-                </p>
-            </div>-->
-                        </div>
-</a>
-               <!--<a href="#/app/detail" class="activity_list"
-                    collection-repeat="item in activity"
-                    collection-item-width="'100%'"
-                    collection-item-height="170"
-                    >      
-                    <div class="row main_row">
-                        <div class="col col-33">
-                            <div class="activ_image" style="background:url({{item.img}})no-repeat;
-                            background-size:100% 100%;"></div>
-                        </div>
-                        <div class="col col-67">
-                            <h3>{{item.title}}</h3>
-                            <P>acteur de génie</P>
-                            <p class="parag">
-                                is a creative studio based in Kuwait, specializing in advertising,
-                                marketing, design, and content creation.
-                            </p>
-                        </div>
+                <!--<div class="col col-33">
+            <div class="activ_image" style="background:url(http://localhost/penca{{palpite.tm1_logo}})no-repeat;
+        background-size:100% 100%;"></div>
+        </div>
+        <div class="col col-67">
+            <h3>{{palpite.ch_nome}}</h3>
+            <P>{{palpite.mt_date}}</P>
+            <p class="parag">
+                {{palpite.t1nome}} vs {{palpite.t2nome}}
+            </p>
+        </div>-->
+                <!--<a href="#/a
+                pp/detail" class="activity_list"
+                collection-repeat="item in activity"
+                collection-item-width="'100%'"
+                collection-item-height="170"
+                >
+                <div class="row main_row">
+                    <div class="col col-33">
+                        <div class="activ_image" style="background:url({{item.img}})no-repeat;
+                        background-size:100% 100%;"></div>
                     </div>
-                    <div class="row sec_row">
-                      <div class="col col-33">
-                         <img src="img/l4.png"/>
-                         <span>Firas Said</span>
-                      </div>
-                      <div class="col col-25">
-                         <p><i class="ion-eye"></i>1235</p>
-                      </div>
-                       <div class="col col-20">
-                         <p><i class="ion-thumbsup"></i>2455</p>
-                      </div>
-                       <div class="col col-20">
-                         <p><i class="ion-chatbubble"></i>865</p>
-                      </div>
-                    </div>
-                    </a>-->
-            </div>
-            <div  class="people_follow"  ng-switch-when="2" >
-                    <div class="row">
-                        <select style="width:100%;font-size:15px;height:35px"
-                                ng-change="meuspalpitescampeonato(opcao)"
-                                ng-model="opcao"
-                                ng-options="campeonato.ch_id as campeonato.ch_nome for campeonato in campeonatos">
-                            <option>--</option>
-                        </select>
-                        <!--<div class="col col-20">
-                            <div class="f_item" style="background:url({{item.img}})no-repeat;
-                            background-size:100% 100%;"></div>
-                        </div>
-                        <div class="col col-67">
-                            <h3>Leonardo DeCaprio</h3>
-                            <P>acteur de génie</P>
-                            <span ng-if="item.type==1">following</span>
-                        </div>
-                        <div class="col follow_icon" ng-class="{'color_icon':item.type!=1}" ng-click="changestatus(item)">
-                           <i class="ion-checkmark-circled"></i>
-                        </div>-->
-                    </div>
-                <div>
-                    <div class="people_follow">
-                        <select style="width:100%;font-size:15px;height:35px"
-                                ng-change="meuspalpitescampeonato(opcao)"
-                                ng-model="opcao"
-                                ng-options="ronda.rd_id as ronda.rd_round for round in rounds">
-                            <option>--</option>
-                        </select>
+                    <div class="col col-67">
+                        <h3>{{item.title}}</h3>
+                        <P>acteur de génie</P>
+                        <p class="parag">
+                            is a creative studio based in Kuwait, specializing in advertising,
+                            marketing, design, and content creation.
+                        </p>
                     </div>
                 </div>
+                <div class="row sec_row">
+                  <div class="col col-33">
+                     <img src="img/l4.png"/>
+                     <span>Firas Said</span>
+                  </div>
+                  <div class="col col-25">
+                     <p><i class="ion-eye"></i>1235</p>
+                  </div>
+                   <div class="col col-20">
+                     <p><i class="ion-thumbsup"></i>2455</p>
+                  </div>
+                   <div class="col col-20">
+                     <p><i class="ion-chatbubble"></i>865</p>
+                  </div>
+                </div>
+                </a>-->
+        </
+                div>
+
+            <div  class="people_follow"  ng-switch-when="2" >
+                <ion-list>
+                    <ion-item ng-repeat="campeonato in campeonatos" ng-click="meuspalpitescampeonato(campeonato.ch_id)">
+                        {{campeonato.ch_nome}}
+                        <p>Acumulado: R${{campeonato.ch_acumulado}}  Palpite: R${{campeonato.ch_dpalpite}}</p>
+                    </ion-item>
+                </ion-list>
                 </div>
             <div ng-switch-when="3">
                 <ion-list>
